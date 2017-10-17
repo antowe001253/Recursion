@@ -24,14 +24,17 @@
 
 
 ####################recursion
-#Until you mee the base case.
-#first observe the iput and output and see how they are related, if there is repetition or a pathern
+#Until you mee the base case.(n=1)
+#first observe the input and output and see how they are related, if there is repetition or a pathern
 # checf if you have any base case: at n=0 and  n=1
 #The program will end when it ran through all the script
-# the ideo is to run to recur until the base case
+# the idea:    find the relationship where n(2)= function of f(1)  -> f(n) -> function of f(n-1)
+#               Try to solve f(n) by using f(n-1) and other opration if it is needed
+#             And to run to recur until the base case.
 #
 #
 
+###### FIBONACCI
 def fib(n):
     assert isinstance (n,int), "n is not an int"
     if n==0: return 1
@@ -40,7 +43,7 @@ def fib(n):
 
 
 #############################################################
-########THE TOWEL OF ##############################
+########THE TOWEL OF HANOI  ##############################
 ###########################################################
 # input and output you nedd to dsign
 # f(1,A,B)  1__ -> _1_  move(1,A,B)
@@ -57,7 +60,7 @@ def f(n,pos,des,temp):
     if n==1: move(pos,des)
     else:
         f(n-1,pos,temp,des)
-        move(pos,des)
+        move(pos,des)# same as f(1,pos,des,temp)
         f(n-1,temp,des,pos)
     print (pos)
     print (des)
